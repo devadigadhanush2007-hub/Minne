@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My life partner 😚😚</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff9a9e, #fecfef);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            overflow-x: hidden;
+            transition: background 0.5s;
+        }
+        body.dark {
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            color: #ecf0f1;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-in;
+        }
+        body.dark .container {
+            background: rgba(44, 62, 80, 0.9);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #e91e63;
+            animation: bounce 1s infinite alternate;
+        }
+        body.dark h1 {
+            color: #e74c3c;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            animation: slideIn 1.5s ease-out;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 24px;
+            animation: float 4s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #c2185b;
+            transform: scale(1.1);
+        }
+        body.dark button {
+            background-color: #e74c3c;
+        }
+        body.dark button:hover {
+            background-color: #c0392b;
+        }
+        #countdown {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #e91e63;
+        }
+        body.dark #countdown {
+            color: #e74c3c;
+        }
+        #loveQuestion, #quiz, #video, #gallery, #chat {
+            display: none;
+            margin-top: 20px;
+        }
+        #loveQuestion.show, #quiz.show, #video.show, #gallery.show, #chat.show {
+            display: block;
+            animation: fadeIn 1s;
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+        }
+        #gallery img {
+            width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        #gallery img:hover {
+            transform: scale(1.1);
+        }
+        #chatMessages {
+            height: 200px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+            background: #f9f9f9;
+        }
+        body.dark #chatMessages {
+            background: #34495e;
+            border-color: #7f8c8d;
+        }
+        #responseForm {
+            display: none;
+            margin-top: 20px;
+        }
+        #responseForm.show {
+            display: block;
+            animation: fadeIn 1s;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        body.dark input, body.dark textarea {
+            background: #34495e;
+            color: #ecf0f1;
+            border-color: #7f8c8d;
+        }
+        audio {
+            margin: 20px 0;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff6b9d;
+            animation: confettiFall 3s linear infinite;
+        }
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        #progressBar {
+            width: 100%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        #progress {
+            height: 100%;
+            background: #e91e63;
+            width: 0%;
+            transition: width 0.5s;
+        }
+        body.dark #progress {
+            background: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="heartsContainer"></div>
+    <div id="confettiContainer"></div>
+    <div class="container">
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        <div id="progressBar"><div id="progress"></div></div>
+        
+        <h1>meriii jaaannnn 😚😚💗💗🫂</h1>
+        <p>I've been wanting to tell you this for a while...</p>
+        <img src="https://via.placeholder.com/400x300?text=Your+Photo+Here" alt="A photo of us or something special">
+        <p>From the moment I met you, you've made my world brighter. Your smile, your laugh, the way you are it all means everything to me. I can't imagine my life without you i love you darling 😚😚💗🫂</p>
+        
+        
+        
+        <!-- Music Player -->
+        <audio controls autoplay loop>
+            <source src="https://open.spotify.com/track/1418IuVKQPTYqt7QNJ9RXN type="audio/wav"> <!-- Replace with a romantic song URL -->
+            Your browser does not support the audio element.
+        </audio>
+        
+        <p>So, riddhiii  will you be myyy girlfriend and life partner???</p>
+        <button onclick="showResponseForm('yes'); triggerConfetti()">Yes!</button>
+        <button onclick="showResponseForm('maybe')">Maybe Later</button>
+        <button onclick="revealSecret()">Click for a Surprise</button>
+        <button onclick="askLoveQuestion()">Do you Love Me?</button>
+        <button onclick="startQuiz()">Take a Fun Quiz!</button>
+        <button onclick="showVideo()">Watch a Cute Video</button>
+        <button onclick="showGallery()">View Our Memories</button>
+        <button onclick="showChat()">Chat with Me</button>
+        
+        <!-- Love Question Section -->
+        <div id="loveQuestion">
+            <h2>Do you Love Me?</h2>
+            <button id="yesLove" onclick="loveResponse('yes')">Yes</button>
+            <button id="noLove" onclick="loveResponse('no')">No</button>
+            <p id="loveMessage"></p>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div id="quiz">
+            <h2>How Well Do You Know Me? 💕</h2>
+            <div id="questionContainer">
+                <p id="question">Question 1: What's my favorite color?</p>
+                <button onclick="answerQuiz('red')">Red</button>
+                <button onclick="answerQuiz('blue')">Blue</button>
+                <button onclick="answerQuiz('green')">Green</button>
+            </div>
+            <p id="quizResult"></p>
+        </div>
+        
+        <!-- Video Section -->
+        <div id="video">
+            <h2>A Cute Video Just for You! 🎥</h2>
+            <iframe src="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DcOn9J04G7Cw&ved=2ahUKEwjg8eivpvGQAxUd4TgGHdWKDyoQo7QBegQIDRAF&usg=AOvVaw1oKcXAr7yo9koYJOd1VRkR" allowfullscreen></iframe> <!-- Replace with a cute video URL -->
+        </div>
+        
+        <!-- Gallery Section -->
+        <div id="gallery">
+            <h2>Our Beautiful Memories 📸</h2>
+            <img src="https://via.placeholder.com/200x150?text=Memory+1" onclick="alert('Aww, remember this?')">
+            <img src="https://via.placeholder.com/200x150?text=Memory+2" onclick="alert('Such a fun day!')">
+            <img src="https://via.placeholder.com/200x150?text=Memory+3" onclick="alert('You look amazing!')">
+            <!-- Add more images as needed -->
+        </div>
+        
+        <!-- Chat Section -->
+        <div id="chat">
+            <h2>Let's Chat! 💬</h2>
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="sendMessage(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        
+        <div id="responseForm">
+            <h2>Share Your Thoughts!</h2>
+            <form onsubmit="submitResponse(event)">
+                <input type="text" id="name" placeholder="your name" required>
+                <textarea id="message" placeholder="Your Response..." rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        
+        <div id="secretMessage" style="display: none; margin-top: 20px;">
+            <p>💕 You're the most amazing person I know! please say yess 💕</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '💗';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                container.appendChild(heart);
+            }
+        }
+        createHearts();
+
+        
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+        }
+
+        // Progress Bar (increases with interactions)
+        let progress = 0;
+        function updateProgress() {
+            progress += 10;
+            if (progress > 100) progress = 100;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        // Show response form
+        function showResponseForm(type) {
+            const form = document.getElementById('responseForm');
+            form.classList.add('show');
+            updateProgress();
+            alert(type === 'yes' ? 'Yay! i love you darling 😚😚😚💗💗' : 'No worries, I still think you\'re amazing!');
+        }
+
+        // Submit response
+        function submitResponse(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            alert(`Thanks, ${name}! Your message: "${message}"`);
+            updateProgress();
+        }
+
+        // Reveal secret message
+        function revealSecret() {
+            const secret = document.getElementById('secretMessage');
+            secret.style.display = 'block';
+            secret.style.animation = 'fadeIn 1s';
+            updateProgress();
+        }
+
+        // Ask love question
+        function askLoveQuestion() {
+            const question = document.getElementById('loveQuestion');
+            question.classList.add('show');
+            updateProgress();
+        }
+
+        // Handle love response
+        function loveResponse(answer) {
+            const message = document.getElementById('loveMessage');
+            const noButton = document.getElementById('noLove');
+            if (answer === 'yes') {
+                message.innerHTML = 'Yay! I knew it i love you babyy💖';
+                noButton.style.display = 'none';
+            } else {
+                message.innerHTML = 'Please say yes? I promise to make you happy! 😊';
+                noButton.style.position = 'absolute';
+                noButton.style.left = Math.random() * 80 + '%';
+                noButton.style.top = Math.random() * 80 + '%';
+            }
+            updateProgress();
+        }
+
+        // Start Quiz
+        let quizScore = 0;
+        let currentQuestion = 0;
+        const questions = [
+            { q: "What's my favorite color?", a: "black", options: ["black", "Blue", "Green"] },
+            { q: "What's my dream date?", a: "movie", options: ["Beach", "Movie", "Hiking"] },
+            { q: "What's something I love about you?", a: "smile", options: ["Smile", "Laughter", "Kindness"] }
+        ];
+        function startQuiz() {
+            const quiz = document.getElementById('quiz');
+            quiz.classList.add('show');
+            currentQuestion = 0;
+            quizScore = 0;
+            showQuestion();
+            updateProgress();
+        }
+        function showQuestion() {
+            if (currentQuestion < questions.length) {
+                const q = questions[currentQuestion];
+                document.getElementById('question').innerHTML = `Question ${currentQuestion + 1}: ${q.q}`;
+                const container = document.getElementById('questionContainer');
+                container.innerHTML = `<p id="question">Question ${currentQuestion + 1}: ${q.q}</p>`;
+                q.options.forEach(option => {
+                    const btn = document.createElement('button');
+                    btn.innerHTML = option;
+                    btn.onclick = () => answerQuiz(option.toLowerCase());
+                    container.appendChild(btn);
+                });
+            } else {
+                document.getElementById('quizResult').innerHTML = `Quiz Complete! Score: ${quizScore}/${questions.length}. You're perfect for me! 💕`;
+            }
+        }
+        function answerQuiz(answer) {
+            if (answer === questions[currentQuestion].a) {
+                quizScore++;
+            }
+            currentQuestion++;
+            showQuestion();
+        }
+
+        // Show Video
+        function showVideo() {
+            const video = document.getElementById('video');
+            video.classList.add('show');
+            updateProgress();
+        }
+
+        // Show Gallery
+        function showGallery() {
+            const gallery = document.getElementById('gallery');
+            gallery.classList.add('show');
+            updateProgress();
+        }
+
+        // Show Chat
+        function showChat() {
+            const chat = document.getElementById('chat');
+            chat.classList.add('show');
+            updateProgress();
+        }
+
+        // Chat Functionality
+        function sendMessage(event) {
+            if (event && event.key !== 'Enter') return;
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                const messages = document.getElementById('chatMessages');
+                messages.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+                input.value = '';
+                // Simulate response (in real app, connect to backend)
+                setTimeout(() => {
+                    messages.innerHTML += `<p><strong>Me:</strong> That's sweet! 😘</p>`;
+                    messages.scrollTop = messages.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Trigger Confetti on Yes
+        function triggerConfetti() {
+            const container = document.getElementById('confettiContainer');
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                container.appendChild(confetti);
+                setTimeout(() => container.removeChild(confetti), 3000);
+            }
+        }
+    </script>
+</body>
+</html>
